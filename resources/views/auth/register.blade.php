@@ -38,6 +38,28 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group">
+                        <label for="name" class="col-md-4 control-label">Permissões</label>
+                            <div class="col-md-6">
+                                <select id="type" class="form-control" name="type" required autofocus>
+                                    <option value="admin">Administrativo</option>
+                                    <option value="demais">Demais usuarios</option> 
+                                </select>
+
+                                
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+
+
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
@@ -51,6 +73,7 @@
                                 @endif
                             </div>
                         </div>
+
 
                         <div class="form-group">
                             <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
