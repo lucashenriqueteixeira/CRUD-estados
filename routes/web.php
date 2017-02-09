@@ -20,7 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::group([],function(){
-
+	
+	Route::post("/realizandocadastro","cadastroEstadosController@SalvaCadastro");
+	
 	Route::get("/cadastro",function(){
 
 		return view("cadastro");

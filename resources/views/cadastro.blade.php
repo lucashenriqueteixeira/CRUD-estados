@@ -4,7 +4,20 @@
 
 <h3>Cadastro de Estados</h3>
 <div class="container">
-<form>
+<form method="POST" action="/realizandocadastro">
+
+{{ csrf_field() }}
+
+@if(count($errors) > 0)
+	<div class="label">
+	<ul>
+		@foreach($errors->all() as $erros)
+			<li>{{ $erros }}</li>
+		@endforeach
+	</ul>
+	</div>
+
+@endif
 	<div class="row">
 		<div class="col-xs-4">
 			<label>Nome Estado</label>
