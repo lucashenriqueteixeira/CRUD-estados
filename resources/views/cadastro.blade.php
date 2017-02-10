@@ -7,6 +7,10 @@
 <form method="POST" action="/realizandocadastro">
 
 {{ csrf_field() }}
+@if(isset($Nome))
+	{{ $Nome[0]->nome }}
+
+@endif
 
 @if(count($errors) > 0)
 	<div class="alert alert-warning">
