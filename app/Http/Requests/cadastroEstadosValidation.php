@@ -24,9 +24,9 @@ class cadastroEstadosValidation extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'require',
-            'sigla' => 'require| max:2',
-            'historico' => 'require',
+            'nome' => 'required',
+            'sigla' => 'required| max:2',
+            'historico' => 'required | max:2',
         ];
     }
 }

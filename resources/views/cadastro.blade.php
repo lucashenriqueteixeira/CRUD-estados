@@ -9,10 +9,10 @@
 {{ csrf_field() }}
 
 @if(count($errors) > 0)
-	<div class="label">
+	<div class="alert alert-warning">
 	<ul>
-		@foreach($errors->all() as $erros)
-			<li>{{ $erros }}</li>
+		@foreach($errors->all() as $error)
+			<li>{{ $error }}</li>
 		@endforeach
 	</ul>
 	</div>
