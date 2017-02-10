@@ -17,3 +17,17 @@ CRUD básico dos estados brasileiros. O cadastro deve conter as seguintes inform
     Framework Laravel;
     BD Mysql;
     Usar requisições AJAX para as ações do CRUD será um diferencial;
+
+Instalação do sistema e dependencias
+
+ git clone https://github.com/lucashenriqueteixeira/CRUD-estados.git
+ 
+ composer update
+ 
+ Instalação Do Banco de Dados e usuarios
+ 
+ php artisan migrate
+ 
+ php artisan make seeder:UsersTableSeeder
+ 
+ 
