@@ -31,3 +31,7 @@ Instalação do sistema e dependencias
  php artisan make seeder:UsersTableSeeder
  
  
+ Login: admin@email.com
+ Senha: password
+ 
+ 
