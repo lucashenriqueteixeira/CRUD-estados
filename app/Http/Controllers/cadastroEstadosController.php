@@ -20,12 +20,7 @@ class cadastroEstadosController extends Controller
 
     	if($Nome == true)
     	{
-    		return view('cadastro')->with('Nome',$Nome);
-    	}
-    	else
-    	{
-    		$Nome = "Erro";
-    		return view("cadastro")->with("Nome",$Nome);
+    		return view('/cadastro')->with('Nome',$Nome);
     	}
     }
 }

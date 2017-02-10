@@ -21,8 +21,18 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="home">Home</a></li>
       <li><a href="cadastro">Cadastro Estados</a></li>
-      
     </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ url('/login') }}"><span class="glyphicon glyphicon-user"></span>cadastro</a></li>
+      <li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-log-in"></span>Sair</a></li>
+    </ul>
+
+
+<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+  {{ csrf_field() }}
+</form>
+
   </div>
 </nav>
 <!-- //MENU// -->

@@ -17,9 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home',function(){
 
-Route::group([],function(){
+	return view("cadastro");
+});
+
+Route::group(['middleware' => 'auth'],function(){
 	
 	Route::post("/realizandocadastro","cadastroEstadosController@SalvaCadastro");
 	

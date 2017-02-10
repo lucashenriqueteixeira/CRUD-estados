@@ -7,10 +7,16 @@
 <form method="POST" action="/realizandocadastro">
 
 {{ csrf_field() }}
-@if(isset($Nome))
-	{{ $Nome[0]->nome }}
 
+@if(isset($Nome))
+	<div class="alert alert-info">
+		Estado: {{ $Nome[0]->nome }} cadastrado com sucesso!
+	</div>
 @endif
+
+<?php
+	unset($Nome);
+?>	
 
 @if(count($errors) > 0)
 	<div class="alert alert-warning">
