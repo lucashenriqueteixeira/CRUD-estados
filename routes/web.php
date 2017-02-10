@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -22,12 +22,23 @@ Route::get('/home',function(){
 	return view("cadastro");
 });
 
-Route::group(['middleware' => 'auth'],function(){
+
+Route::group(['middleware' => 'auth'],function()
+{
 	
-	Route::post("/realizandocadastro","cadastroEstadosController@SalvaCadastro");
-	
-	Route::get("/cadastro",function(){
+	Route::get("/cadastro",function()
+	{
 
 		return view("cadastro");
 	});
+	
+	Route::get("/registeruser",function()
+	{
+		return view("auth.registerUser");
+	});
+	
+	Route::post("/realizandocadastro","cadastroEstadosController@SalvaCadastro");
+	
+	Route::post("/registerusercreate","Auth\RegisterController@create");
+	
 });

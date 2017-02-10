@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Request;
 
 class RegisterController extends Controller
 {
@@ -36,7 +37,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        
     }
 
     /**
@@ -61,13 +62,18 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'type' => $data['type'],
+        $Dados = User::create([
+            'name' => $request::input('name'),
+            'email' => $request::input('email'),
+            'password' => bcrypt($request::input('password')),
+            'type' => $request::input('type'),
         ]);
+        
+        if($Dados)
+        {
+            return view("cadastro");
+        }
     }
 }

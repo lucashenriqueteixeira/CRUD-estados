@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.menu')
 
-@section('content')
+@section('body')
 
 @if(!Auth::check())
     Para realizar cadastro, você deve estar logado.
@@ -13,7 +13,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/registerusercreate') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

@@ -24,7 +24,11 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="{{ url('/login') }}"><span class="glyphicon glyphicon-user"></span>cadastro</a></li>
+      @if(!Auth::check())
+      <li><a href="{{ url('/login') }}"><span class="glyphicon glyphicon-user"></span>login</a></li>
+      @endif
+      <li><a>Usuario: {{  Auth::user()->name }}</a></li>
+      <li><a href="{{ url('/registeruser') }}"><span class="glyphicon glyphicon-user"></span>cadastro</a></li>
       <li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-log-in"></span>Sair</a></li>
     </ul>
 
