@@ -19,10 +19,9 @@
       <a class="navbar-brand" href="#">CRUD</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Cadastro Usuarios</a></li>
-      <li><a href="#">Cadastro Estados</a></li>
-      <li><a href="#">Page 3</a></li>
+      <li class="active"><a href="home">Home</a></li>
+      <li><a href="cadastro">Cadastro Estados</a></li>
+      
     </ul>
   </div>
 </nav>
