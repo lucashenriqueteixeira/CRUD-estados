@@ -3,10 +3,10 @@
 <head>
   @yield("head")
 
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
 
-  <script type="text/javascript" src="js/jquery3.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="/js/jquery3.js"></script>
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
 
   <title>@yield("title")</title>
 </head>
@@ -20,7 +20,8 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="home">Home</a></li>
-      <li><a href="cadastro">Cadastro Estados</a></li>
+      <li><a href="/cadastro">Cadastro Estados</a></li>
+      <li><a href="/busca">Busca e edição</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">

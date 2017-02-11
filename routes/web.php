@@ -26,17 +26,24 @@ Route::get('/home',function(){
 Route::group(['middleware' => 'auth'],function()
 {
 	
-	Route::get("/cadastro",function()
+	Route::get("cadastro",function()
 	{
 
 		return view("cadastro");
 	});
 	
-	Route::get("/registeruser",function()
+	Route::get("registeruser",function()
 	{
 		return view("auth.registerUser");
 	});
-	
+
+
+	Route::get("busca","buscaEstadosController@select");
+
+	Route::get("editar/{id}","editarEstadosController@editar");
+
+
+	//rotas para apenas receber os envios de post
 	Route::post("/realizandocadastro","cadastroEstadosController@SalvaCadastro");
 	
 	Route::post("/registerusercreate","Auth\RegisterController@create");
