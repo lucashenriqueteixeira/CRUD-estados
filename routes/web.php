@@ -49,5 +49,7 @@ Route::group(['middleware' => 'auth'],function()
 	Route::post("/registerusercreate","Auth\RegisterController@create");
 
 	Route::post("/editarexecutar/{id}","editarEstadosController@editar");
+
+	Route::get("/deletar/{id}","deleteEstadosController@delete");
 	
 });
