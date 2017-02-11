@@ -40,12 +40,14 @@ Route::group(['middleware' => 'auth'],function()
 
 	Route::get("busca","buscaEstadosController@select");
 
-	Route::get("editar/{id}","editarEstadosController@editar");
+	Route::get("editar/{id}","editarEstadosController@select");
 
 
 	//rotas para apenas receber os envios de post
 	Route::post("/realizandocadastro","cadastroEstadosController@SalvaCadastro");
 	
 	Route::post("/registerusercreate","Auth\RegisterController@create");
+
+	Route::post("/editarexecutar/{id}","editarEstadosController@editar");
 	
 });

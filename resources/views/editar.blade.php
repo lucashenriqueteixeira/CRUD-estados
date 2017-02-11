@@ -7,7 +7,7 @@ CRUD - Editar -
 
 <h3>Edição de Estados</h3>
 <div class="container">
-<form method="POST" action="/editarexecutar">
+<form method="POST" action="/editarexecutar/{{ $DadosEstados[0]->id }}">
 
 {{ csrf_field() }}
 
@@ -31,24 +31,25 @@ CRUD - Editar -
 	</div>
 
 @endif
+
 	<div class="row">
 		<div class="col-xs-4">
 			<label>Nome Estado</label>
-			<input class="form-control" value="" type="text" name="nome" required="required">
+			<input class="form-control" value="{{ $DadosEstados[0]->nome }}" type="text" name="nome" required="required">
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-xs-2">
 			<label>Sigla</label>
-			<input class="form-control" value="" type="text" name="sigla" required="required" maxlength="2">
+			<input class="form-control" value="{{ $DadosEstados[0]->sigla }}" type="text" name="sigla" required="required" maxlength="2">
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-xs-5">
 		<label>Historico</label>
-			<textarea name="historico" value="" required="required" class="form-control"></textarea>
+			<textarea name="historico" required="required" class="form-control">{{ $DadosEstados[0]->historico }}</textarea>
 		</div>
 	</div>
 
